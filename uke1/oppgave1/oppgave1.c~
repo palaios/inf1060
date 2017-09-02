@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+bool argCheck(int x,char a[]){
+  int i;
+  int value;
+  int n;
+  char ch;
+
+  for (i=1; i<msg; i++) {
+    n = sscanf(argv[i], "%d%c", &value, &ch);
+    if (n != 1) {
+      /* sscanf didnt find a number to convert, so it wasnt a number*/
+      printf("not a number\n");
+      return false;
+    }
+    else {
+      printf("number\n");
+      /* It was a number*/
+      return true;
+    }
+  }
+}
+
+int main(int msg, char *argv[]) {
+
+  if( msg == 2 ) {
+    argCheck(msg, argv);
+    printf("Input: %s\n", argv[1]);
+  }
+  else if( msg < 2 ) {
+    printf("Forventer 1 argument, eks ./oppgave1 argument\n");
+  }
+}

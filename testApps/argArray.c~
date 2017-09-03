@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int argCheck(int msg, char **param);
+int main(int argc, char *argv[]) {
+  if ( argc == 2 ) {
+    int x = argCheck(argc, argv);
+  }
+}
+
+int argCheck(int msg, char** param) {
+  printf("im in argCheck\n");
+  return 0;
+}

@@ -1,10 +1,10 @@
 #include <stdio.h>
+
 int argCheck(int msg, char **param);
 
 int main(int argc, char *argv[]) {
   if (argc == 2) {
     int x = argCheck(argc, argv);
-    printf("In Main: Number was: %i \n", x);
   } else {
     printf("arguments not correct: programName argumentOne \n");
   }
@@ -20,6 +20,7 @@ int argCheck(int msg, char **param) {
     n = sscanf(param[i], "%d%c", &value, &ch);
     if (n != 1) {
       printf("not a number\n");
+      return 0;
     } else {
      int x = value;
      printf("input was a number: %i \n", x);
